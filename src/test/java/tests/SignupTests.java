@@ -50,6 +50,13 @@ public class SignupTests {
 		System.out.println("Test 5 : " + " Thread:" +  Thread.currentThread().getId());
 	}
 	
+	@Test
+	public void test6() throws InterruptedException {
+		Driver.getDriver().get("https://etsy.com");
+		Thread.sleep(2000);
+		System.out.println("Test 6 : " + " Thread:" +  Thread.currentThread().getId());
+	}
+	
 	@Test (groups = {"smoke-test", "signupPage"}, description = "verify signup page components")
 	public void signUpPageTest() throws InterruptedException {
 		System.out.println("Sign up test running on : " + " Thread:" +  Thread.currentThread().getId());
