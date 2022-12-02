@@ -48,7 +48,6 @@ public class SignupTests {
 		Driver.getDriver().get("https://saucedemo.com");
 		Thread.sleep(2000);
 		System.out.println("Test 5 : " + " Thread:" +  Thread.currentThread().getId());
-		
 	}
 	
 	@Test (groups = {"smoke-test", "signupPage"}, description = "verify signup page components")
