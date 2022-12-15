@@ -1,139 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-01T19:29:21 EST" name="Ecomm-regression" finished-at="2022-12-01T19:29:30 EST" duration-ms="9639">
+  <suite started-at="2022-12-14T21:30:43 EST" name="Default suite" finished-at="2022-12-14T21:30:45 EST" duration-ms="1823">
     <groups>
-      <group name="smoke-test">
-        <method signature="SignupTests.signUpPageTest()[pri:0, instance:tests.SignupTests@78dd667e]" name="signUpPageTest" class="tests.SignupTests"/>
-        <method signature="SignupTests.test5()[pri:0, instance:tests.SignupTests@78dd667e]" name="test5" class="tests.SignupTests"/>
-      </group> <!-- smoke-test -->
-      <group name="signupPage">
-        <method signature="SignupTests.signUpPageTest()[pri:0, instance:tests.SignupTests@78dd667e]" name="signUpPageTest" class="tests.SignupTests"/>
-      </group> <!-- signupPage -->
     </groups>
-    <test started-at="2022-12-01T19:29:21 EST" name="loginRegression" finished-at="2022-12-01T19:29:30 EST" duration-ms="9639">
-      <class name="tests.SignupTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:21 EST" name="setup" finished-at="2022-12-01T19:29:25 EST" duration-ms="4321" status="PASS">
+    <test started-at="2022-12-14T21:30:43 EST" name="Default test" finished-at="2022-12-14T21:30:45 EST" duration-ms="1823">
+      <class name="petStoreApiTests.PetStoreApiTests">
+        <test-method signature="postACat()[pri:0, instance:petStoreApiTests.PetStoreApiTests@f8c1ddd]" started-at="2022-12-14T21:30:43 EST" name="postACat" finished-at="2022-12-14T21:30:44 EST" duration-ms="990" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:21 EST" name="setup" finished-at="2022-12-01T19:29:23 EST" duration-ms="1860" status="PASS">
+        </test-method> <!-- postACat -->
+        <test-method signature="postAPet()[pri:0, instance:petStoreApiTests.PetStoreApiTests@f8c1ddd]" started-at="2022-12-14T21:30:44 EST" name="postAPet" finished-at="2022-12-14T21:30:44 EST" duration-ms="106" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:21 EST" name="setup" finished-at="2022-12-01T19:29:23 EST" duration-ms="1860" status="PASS">
+        </test-method> <!-- postAPet -->
+        <test-method signature="findPetByStatus()[pri:0, instance:petStoreApiTests.PetStoreApiTests@f8c1ddd]" started-at="2022-12-14T21:30:44 EST" name="findPetByStatus" finished-at="2022-12-14T21:30:44 EST" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:21 EST" name="setup" finished-at="2022-12-01T19:29:23 EST" duration-ms="1906" status="PASS">
+        </test-method> <!-- findPetByStatus -->
+        <test-method signature="getById()[pri:0, instance:petStoreApiTests.PetStoreApiTests@f8c1ddd]" started-at="2022-12-14T21:30:44 EST" name="getById" finished-at="2022-12-14T21:30:45 EST" depends-on-methods="petStoreApiTests.PetStoreApiTests.postACat" duration-ms="500" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="signUpPageTest()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:23 EST" name="signUpPageTest" description="verify signup page components" finished-at="2022-12-01T19:29:30 EST" duration-ms="7753" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"link text","selector":"Welcome!"}
-  (Session info: chrome=108.0.5359.71)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'helilshahyars-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.71, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /var/folders/8k/y0c6q_0d6wn...}, goog:chromeOptions: {debuggerAddress: localhost:50971}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e02d810f606e98d2e00f8ecc881c56cb
-*** Element info: {Using=link text, value=Welcome!}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Welcome!"}
-  (Session info: chrome=108.0.5359.71)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'helilshahyars-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.71, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /var/folders/8k/y0c6q_0d6wn...}, goog:chromeOptions: {debuggerAddress: localhost:50971}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e02d810f606e98d2e00f8ecc881c56cb
-*** Element info: {Using=link text, value=Welcome!}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
-at tests.SignupTests.signUpPageTest(SignupTests.java:62)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- getById -->
+        <test-method signature="getPetById()[pri:0, instance:petStoreApiTests.PetStoreApiTests@f8c1ddd]" started-at="2022-12-14T21:30:45 EST" name="getPetById" finished-at="2022-12-14T21:30:45 EST" depends-on-methods="petStoreApiTests.PetStoreApiTests.postAPet" duration-ms="93" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signUpPageTest -->
-        <test-method signature="test2()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:23 EST" name="test2" finished-at="2022-12-01T19:29:27 EST" duration-ms="4022" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method signature="test4()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:23 EST" name="test4" finished-at="2022-12-01T19:29:28 EST" duration-ms="4898" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test4 -->
-        <test-method signature="test3()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:25 EST" name="test3" finished-at="2022-12-01T19:29:28 EST" duration-ms="3065" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test3 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:27 EST" name="setup" finished-at="2022-12-01T19:29:27 EST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:27 EST" name="quitDriver" finished-at="2022-12-01T19:29:27 EST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-        <test-method signature="test5()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:27 EST" name="test5" finished-at="2022-12-01T19:29:29 EST" duration-ms="2179" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test5 -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:28 EST" name="quitDriver" finished-at="2022-12-01T19:29:28 EST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:28 EST" name="quitDriver" finished-at="2022-12-01T19:29:28 EST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:29 EST" name="quitDriver" finished-at="2022-12-01T19:29:29 EST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SignupTests@78dd667e]" started-at="2022-12-01T19:29:30 EST" name="quitDriver" finished-at="2022-12-01T19:29:30 EST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-      </class> <!-- tests.SignupTests -->
-    </test> <!-- loginRegression -->
-  </suite> <!-- Ecomm-regression -->
+        </test-method> <!-- getPetById -->
+      </class> <!-- petStoreApiTests.PetStoreApiTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

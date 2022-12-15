@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.SignupTests">
+      <class name="petStoreApiTests.PetStoreApiTests">
         <methods>
-          <include name="signUpPageTest"/>
-          <include name="setup"/>
-          <include name="quitDriver"/>
+          <include name="getById"/>
         </methods>
-      </class> <!-- tests.SignupTests -->
+      </class> <!-- petStoreApiTests.PetStoreApiTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
