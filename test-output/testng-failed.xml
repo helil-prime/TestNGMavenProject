@@ -5,7 +5,9 @@
     <classes>
       <class name="petStoreApiTests.PetStoreApiTests">
         <methods>
-          <include name="getById"/>
+          <include name="cleanup"/>
+          <include name="setup"/>
+          <include name="chainValidation"/>
         </methods>
       </class> <!-- petStoreApiTests.PetStoreApiTests -->
     </classes>

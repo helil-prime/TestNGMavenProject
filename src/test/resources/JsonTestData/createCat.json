@@ -1,0 +1,22 @@
+{
+    "id": 345555,
+    "category": {
+        "id": 21,
+        "name": "cat"
+    },
+    "name": "Mimi",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 18,
+            "name": "persian"
+        },
+        {
+            "id": 2,
+            "name": "Anatolian"
+        }
+    ],
+    "status": "available"
+}
