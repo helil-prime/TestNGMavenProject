@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [PetStoreAPI]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="methods" name="APITests(failed)">
+    <classes>
+      <class name="petStoreApiTests.PetStoreApiTests">
+        <methods>
+          <include name="getById"/>
+          <include name="cleanup"/>
+          <include name="postAPet"/>
+          <include name="postACat"/>
+          <include name="updateCat"/>
+          <include name="invalidIdUpdateCat"/>
+          <include name="createCatWithJsonFile"/>
+          <include name="setup"/>
+          <include name="chainValidation"/>
+          <include name="getPetById"/>
+        </methods>
+      </class> <!-- petStoreApiTests.PetStoreApiTests -->
+    </classes>
+  </test> <!-- APITests(failed) -->
+</suite> <!-- Failed suite [PetStoreAPI] -->
