@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="validLogin"/>
+          <include name="invalidLogin"/>
         </methods>
       </class> <!-- tests.CraterUserManagement -->
     </classes>
