@@ -1,8 +1,6 @@
 package tests;
 
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.webdriver.WebDriverBrowser;
 import pages.CraterDashboardPage;
 import pages.CraterLoginPage;
 import utils.BrowserUtils;
@@ -11,11 +9,7 @@ import utils.TestDataReader;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
