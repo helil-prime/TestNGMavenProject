@@ -21,7 +21,7 @@ public class DButils {
 	private ResultSet resultset;
 	private ResultSetMetaData rsmd;
 	
-	// this function accepts a sql query and gets the record.
+	// this function accepts a select sql query and returns the record as a List of string
 	public List<String> selectArecord(String query){
 		List<String> list = new ArrayList<>();
 		try {
@@ -55,7 +55,7 @@ public class DButils {
 		}
 	}
 	
-	// this function accepts an update sql query and updates it.
+	// this function accepts an update sql query and updates a record.
 	public void updateRecord(String updateQuery) {
 		try {
 			connection = DriverManager.getConnection(dbHostName, username, password);

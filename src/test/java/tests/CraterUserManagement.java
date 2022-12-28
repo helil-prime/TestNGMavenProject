@@ -6,7 +6,6 @@ import pages.CraterLoginPage;
 import utils.BrowserUtils;
 import utils.Driver;
 import utils.TestDataReader;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import java.util.concurrent.TimeUnit;
