@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Random;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserUtils {
-	
+
 	Alert alert;
 	WebDriverWait letswait;
 	Select letsSelect;
@@ -46,21 +48,23 @@ public class BrowserUtils {
 		alert.sendKeys(text);
 	}
 
-	// This function accepts a web element and waits until it is visible for 5 seconds
+	// This function accepts a web element and waits until it is visible for 5
+	// seconds
 	public void waitUntilElementVisible(WebElement element) {
 		letswait = new WebDriverWait(Driver.getDriver(), 5);
 		letswait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
-	// This function accepts a select webElement and a option to be selected 
+
+	// This function accepts a select webElement and a option to be selected
 	// and selects the option from the given dropdown
 	public void selectByVisibleText(WebElement selectElement, String optionToSelect) {
 		letsSelect = new Select(selectElement);
 		letsSelect.selectByVisibleText(optionToSelect);
 	}
 
-	// This function accepts a web element and checks if the element exist in the DOM,
-	// and return boolean. 
+	// This function accepts a web element and checks if the element exist in the
+	// DOM,
+	// and return boolean.
 	public boolean isElementPresent(WebElement element) {
 		try {
 			element.getText();
@@ -70,13 +74,19 @@ public class BrowserUtils {
 		return true;
 	}
 
-	// This function accepts a web element and moves the mouse cursor to that element. 
+	// This function accepts a web element and moves the mouse cursor to that
+	// element.
 	// hover over to an element
 	public void moveToElement(WebElement element) {
 		act = new Actions(Driver.getDriver());
 		act.moveToElement(element).perform();
 	}
-	
+
+	public void sendKeysToElement(WebElement element, String message) {
+		act = new Actions(Driver.getDriver());
+		act.sendKeys(element, message).build().perform();
+	}
+
 	// drag the source element to the target element
 	public void dragAndDrop(WebElement sourceElement, WebElement targetElement) {
 		act = new Actions(Driver.getDriver());
@@ -106,4 +116,10 @@ public class BrowserUtils {
 		element.sendKeys(Keys.DELETE);
 	}
 
+	// random 3 digit number generator
+	public int randomNumber() {
+		Random rand = new Random();
+		int randomNum = rand.nextInt((999 - 100) + 1) + 100;
+		return randomNum;
+	}
 }
