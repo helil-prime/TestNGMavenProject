@@ -29,6 +29,9 @@ public class CraterItemsPage {
 	@FindBy (xpath = "//h3[text()='New Item']")
 	public WebElement newItemHeaderText;
 	
+	@FindBy (xpath = "//h3[text()='Edit Item']")
+	public WebElement editItemHeaderText;
+	
 	@FindBy (xpath = "//div[@class='relative rounded-md shadow-sm font-base']/input")
 	public WebElement addItemNameField;
 	
@@ -44,9 +47,26 @@ public class CraterItemsPage {
 	@FindBy (xpath = "//button[text()=' Save Item']")
 	public WebElement saveItemButton;
 	
+	@FindBy (xpath = "//button[text()=' Update Item']")
+	public WebElement updateItemButton;
+	
+	@FindBy (xpath = "//a[text()=' Delete']")
+	public WebElement deleteItemButton;
+	
+	@FindBy (xpath = "//button[text()='Ok']")
+	public WebElement deleteOKButton;
+	
 	@FindBy (xpath = "//span[text()='pc']")
 	public WebElement pc_unit;
 	
 	@FindBy (xpath = "//p[text()='Item created successfully']")
 	public WebElement itemCreateSuccessMessage;
+	
+	@FindBy (xpath = "//p[text()='Item updated successfully']")
+	public WebElement itemUpdatedSuccessMessage;
+	
+	@FindBy (xpath = "//p[text()='Item deleted successfully']")
+	public WebElement itemDeletedSuccessMessage;
+	
+	
 }
