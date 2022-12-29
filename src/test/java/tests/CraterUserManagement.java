@@ -14,6 +14,7 @@ import org.testng.annotations.AfterMethod;
 
 public class CraterUserManagement {
 	
+	BrowserUtils utils;
 	
   @Test
   public void validLogin() throws InterruptedException {
@@ -28,10 +29,14 @@ public class CraterUserManagement {
 	  Driver.getDriver().get(TestDataReader.getProperty("craterUrl"));
 	  CraterLoginPage loginpage = new CraterLoginPage();
 	  Thread.sleep(1000);
-	  loginpage.useremail.sendKeys(TestDataReader.getProperty("craterValidUserEmail"));
-	  Thread.sleep(1000);
-	  loginpage.password.sendKeys(TestDataReader.getProperty("craterValidPassword"));
-	  loginpage.loginButton.click();
+	  loginpage.login();
+//	  utils = new BrowserUtils();
+//	  utils.sendKeysWithActionsClass(loginpage.useremail, TestDataReader.getProperty("craterValidUserEmail"));
+//	  //loginpage.useremail.sendKeys(TestDataReader.getProperty("craterValidUserEmail"));
+//	  Thread.sleep(1000);
+//	  utils.sendKeysWithActionsClass(loginpage.password, TestDataReader.getProperty("craterValidPassword"));
+//	  //loginpage.password.sendKeys(TestDataReader.getProperty("craterValidPassword"));
+	  //loginpage.loginButton.click();
 	  
 	  // verify the amount due element display
 	  CraterDashboardPage dashboardPage = new CraterDashboardPage();

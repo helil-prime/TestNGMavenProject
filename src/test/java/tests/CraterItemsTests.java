@@ -29,13 +29,13 @@ public class CraterItemsTests {
 	String newItemName = "Coffee mug";
 	
 	@Test
-	public void createItem() {
+	public void createItem() throws InterruptedException {
 		/*
 		 * Create an item on UI.
            Then go to database, and query from the items table using select * to get the information
     	   Then verify the information that you have provided on UI is correct. 
     	   Then update your Item on the UI, come back to database and verify the update is in effect.
-           Then delete the Item on the UI,  come back to database and verify the estimate no longer exist. 
+           Then delete the Item on the UI,  come back to database and verify the item no longer exist. 
 		 */
 		commonpage = new CraterCommonPage();
 		itemsPage  = new CraterItemsPage();
@@ -50,7 +50,8 @@ public class CraterItemsTests {
 		itemsPage.addItemButton.click();
 		// verify that the add item modal displays
 		Assert.assertTrue(itemsPage.newItemHeaderText.isDisplayed());
-		// provide item information
+	// provide item information
+		// add random number to the test data (item name)
 		newItemName = newItemName + utils.randomNumber();
 		itemsPage.addItemNameField.sendKeys(newItemName);
 		itemsPage.addItemPriceField.sendKeys("2800");
@@ -80,6 +81,56 @@ public class CraterItemsTests {
 		
 		Assert.assertEquals(itemsData.get(1), newItemName);
 		
+		// Then update your Item on the UI, 
+		//come back to database and verify the update is in effect.
+		
+		Driver.getDriver().findElement(By.xpath("//a[text()='"+newItemName+"']")).click();
+		// verify that user is on the edit item page
+		Assert.assertTrue(itemsPage.editItemHeaderText.isDisplayed());
+		// edit the item description 
+		String itemNewDescription = "Very good looking coffee mug!";
+		// first clear the existing message
+		utils.clearTextOfAFieldMac(itemsPage.addItemDescription);
+		Thread.sleep(1000);
+		// send the new description
+		itemsPage.addItemDescription.sendKeys(itemNewDescription);
+		Thread.sleep(1000);
+		// click on update item button
+		itemsPage.updateItemButton.click();
+		// wait the update success message banner
+		utils.waitUntilElementVisible(itemsPage.itemUpdatedSuccessMessage);
+		// verify the message banner displays
+		Assert.assertTrue(itemsPage.itemUpdatedSuccessMessage.isDisplayed());
+		
+		// select query to get the item data from the DB
+		String updateQuery = "SELECT * FROM items WHERE name='"+newItemName+"';";
+		List<String> updatedData = dbutils.selectArecord(updateQuery);
+		System.out.println("ITEM ID: " + updatedData.get(0));
+		System.out.println("ITEM NAME: " + updatedData.get(1));
+		System.out.println("ITEM DESCRIPTION: " + updatedData.get(2));
+		// verify that the updated description match to the expected.
+		Assert.assertEquals(updatedData.get(2), itemNewDescription);
+		
+		// Then delete the Item on the UI,  
+		// come back to database and verify the item no longer exist.
+		Driver.getDriver().findElement(
+				By.xpath("(//a[text()='"+newItemName+"']//parent::td)//following-sibling::td[4]//button")).click();
+		// click on the delete button
+		utils.waitUntilElementVisible(itemsPage.deleteItemButton);
+		itemsPage.deleteItemButton.click();
+		// wait for the Ok button to be visible
+		utils.waitUntilElementVisible(itemsPage.deleteOKButton);
+		// click on Ok button
+		itemsPage.deleteOKButton.click();
+		// wait and verify the delete success message display
+		utils.waitUntilElementVisible(itemsPage.itemDeletedSuccessMessage);
+		Assert.assertTrue(itemsPage.itemDeletedSuccessMessage.isDisplayed());
+		
+		// data base query and verify the list is empty
+		String deletedQuery = "SELECT * FROM items WHERE name='"+newItemName+"';";
+		List<String> deletedData = dbutils.selectArecord(deletedQuery);
+		Assert.assertTrue(deletedData.isEmpty());
+		Assert.assertTrue(deletedData.size() == 0);
 	}
 	
 	@BeforeMethod
@@ -87,10 +138,7 @@ public class CraterItemsTests {
 		loginPage = new CraterLoginPage();
 		Driver.getDriver().get(TestDataReader.getProperty("craterUrl"));
 		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		loginPage.useremail.sendKeys(TestDataReader.getProperty("craterValidUserEmail"));
-    	 Thread.sleep(1000);
-		 loginPage.password.sendKeys(TestDataReader.getProperty("craterValidPassword"));
-		 loginPage.loginButton.click();
+		loginPage.login();
 		
 	}
 
